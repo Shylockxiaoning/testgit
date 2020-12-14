@@ -1,0 +1,4 @@
+2020-12-14T21:09:20.969+0800	INFO	sap/main.go:17	init logerr success
+2020-12-14T21:09:20.984+0800	INFO	sap/main.go:23	Initconfig Success
+2020-12-14T21:09:20.992+0800	INFO	sap/main.go:29	InitMySQL Success
+2020-12-14T21:09:22.643+0800	ERROR	MySQL/admin.go:94	db.get	{"error": "sql: no rows in result set"}

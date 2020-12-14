@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ok</title>
+</head>
+<style>
+    .a{
+        width: 20%;
+        margin: 0 0 0 20%;
+    }
+    .c{
+        border: 1px solid beige;
+        color:darkgrey;
+        text-decoration: none;
+    }
+    .d{
+        background-color: azure;
+        width: 60%;
+        height: 70px;
+        margin: 10px auto;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        border: 1px solid black;
+    }
+</style>
+<body bgcolor="#f0f8ff">
+<h1 align="center">欢迎进入图书管理系统</h1>
+{{ range $v := .res}}
+    <div class="d">
+        <table>
+            书名:{{ $v.Title }}
+            作者:{{ $v.Author }}
+            类别:{{ $v.Category }}
+            日期:{{ $v.IssueDate }}
+            库存:{{ $v.Inventory }}
+            价格:{{ $v.Price }}
+            <br>
+            简介:{{ $v.Synopsis }}
+
+        </table>
+    </div>
+{{ end }}
+<div class="a">
+    <a class="c" href="/admin/index">首页</a>
+    <a class="c" href="/admin/index?page=reduce">上一页</a>
+    {{ range $v := .list}}
+        <a class="c" href="/admin/index?page={{.}}">{{.}}</a>
+    {{ end }}
+    <a class="c" href="/admin/index?page=add">下一页</a>
+    <a class="c" href="/admin/index?page=last">末页</a>
+</div>
+</body>
+</html>
